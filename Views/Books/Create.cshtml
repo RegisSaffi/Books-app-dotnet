@@ -1,0 +1,38 @@
+﻿@model Books_218011357.Models.Book
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Add new book</title>
+</head>
+<body>
+<div style="width: 60%">
+    <h3>Add new book</h3>
+    <form asp-action="Create" asp-controller="Books">
+        <div class="form-group">
+            <label class="col-form-label" asp-for="ISBN"></label>
+            <input type="text" class="form-control" asp-for="ISBN"/>
+            <span asp-validation-for="ISBN" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Title"></label>
+            <input type="text" class="form-control" asp-for="Title"/>
+            <span asp-validation-for="Title" class="text-danger"></span>
+
+        </div>
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-success" value="Save book"/>
+            <input type="reset" class="btn btn-danger" value="Clear form"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>

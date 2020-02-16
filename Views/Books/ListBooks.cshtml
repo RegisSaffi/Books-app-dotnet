@@ -1,0 +1,37 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div>
+    
+    <div class="d-flex justify-content-center p-2 m-2">
+        <h3>List of registered books</h3>
+    </div>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+
+        <th>ISBN</th>
+        <th colspan="3">Title</th>
+        </thead>
+
+        @foreach (var book in @Model.Books)
+        {
+            <tr>
+                <td>@book.ISBN</td>
+                <td>@book.Title</td>
+
+            </tr>
+        }
+    </table>
+</div>
+</body>
+</html>
